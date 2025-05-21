@@ -116,8 +116,8 @@ class MainActivity : ComponentActivity() {
                                                 indicatorColor = MaterialTheme.colorScheme.surfaceColorAtElevation(
                                                     elevation = 0.dp
                                                 ),
-                                                selectedIconColor = MaterialTheme.colorScheme.secondary,
-                                                selectedTextColor = MaterialTheme.colorScheme.secondary,
+                                                selectedIconColor = MaterialTheme.colorScheme.primary,
+                                                selectedTextColor = MaterialTheme.colorScheme.primary,
                                                 unselectedIconColor = MaterialTheme.colorScheme.onSurface,
                                                 unselectedTextColor = MaterialTheme.colorScheme.onSurface
                                             )
