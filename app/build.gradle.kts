@@ -67,7 +67,7 @@ dependencies {
 
 
     //Appcompat
-    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("androidx.appcompat:appcompat:1.7.0")
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.0")
@@ -75,6 +75,10 @@ dependencies {
 
     //Extended Material Icons
     implementation("androidx.compose.material:material-icons-extended:1.7.8")
+
+    //Datastore
+    implementation ("androidx.datastore:datastore-preferences:1.1.6")
+
 
 
 
