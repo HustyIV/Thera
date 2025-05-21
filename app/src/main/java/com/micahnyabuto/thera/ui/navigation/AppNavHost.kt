@@ -2,6 +2,7 @@ package com.micahnyabuto.thera.ui.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -41,7 +42,9 @@ fun AppNavHost(
         }
 
         composable <Destinations.Settings>{
-            SettingsScreen()
+            SettingsScreen(
+                viewModel = viewModel()
+            )
         }
 
 
