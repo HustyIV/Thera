@@ -25,6 +25,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.surfaceColorAtElevation
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
@@ -34,11 +35,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.micahnyabuto.thera.ui.navigation.AppNavHost
 import com.micahnyabuto.thera.ui.navigation.BottomNavigation
 import com.micahnyabuto.thera.ui.navigation.Destinations
+import com.micahnyabuto.thera.ui.screens.settings.SettingsViewModel
 import com.micahnyabuto.thera.ui.theme.TheraTheme
 
 class MainActivity : ComponentActivity() {
@@ -46,7 +49,12 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            TheraTheme {
+            val viewModel: SettingsViewModel = viewModel()
+            val isDarkMode by viewModel.isDarkMode.collectAsState()
+            TheraTheme (
+                darkTheme =isDarkMode
+
+            ){
                 val navController =rememberNavController()
                 val navBackStackEntry by navController.currentBackStackEntryAsState()
                 val currentRoute = navBackStackEntry?.destination?.route ?: Destinations.Home::class.qualifiedName.orEmpty()
