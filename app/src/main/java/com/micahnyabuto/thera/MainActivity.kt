@@ -41,6 +41,7 @@ import androidx.navigation.compose.rememberNavController
 import com.micahnyabuto.thera.ui.navigation.AppNavHost
 import com.micahnyabuto.thera.ui.navigation.BottomNavigation
 import com.micahnyabuto.thera.ui.navigation.Destinations
+import com.micahnyabuto.thera.ui.screens.chat.ChatScreen
 import com.micahnyabuto.thera.ui.screens.settings.SettingsViewModel
 import com.micahnyabuto.thera.ui.theme.TheraTheme
 
@@ -62,6 +63,7 @@ class MainActivity : ComponentActivity() {
                 // Don't Show bottom navigation only when on....
                 val showBottomNavigation = currentRoute !in listOf(
                     Destinations.Splash::class.qualifiedName,
+                    Destinations.Chat::class.qualifiedName
 
                     )
                 Scaffold (
@@ -130,7 +132,7 @@ class MainActivity : ComponentActivity() {
                     }
                 ){innerpadding ->
                     AppNavHost(
-                        modifier = Modifier.padding(innerpadding),
+                      modifier = Modifier.padding(innerpadding),
                         navController =  navController
                     )
 
