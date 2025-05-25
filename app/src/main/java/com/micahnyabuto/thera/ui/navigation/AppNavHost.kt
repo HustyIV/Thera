@@ -45,6 +45,7 @@ fun AppNavHost(
 
         composable <Destinations.Settings>{
             SettingsScreen(
+                navController =navController,
                 viewModel = viewModel()
             )
         }
