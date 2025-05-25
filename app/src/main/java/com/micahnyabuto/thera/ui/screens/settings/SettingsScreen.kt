@@ -26,11 +26,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import com.micahnyabuto.thera.ui.navigation.Destinations
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SettingsScreen(
+    navController: NavController,
     modifier: Modifier = Modifier,
     viewModel: SettingsViewModel
 ){
@@ -93,7 +96,7 @@ fun SettingsScreen(
             ) {
                 Text("Profile")
 
-                IconButton(onClick = {}) {
+                IconButton(onClick = {navController.navigate(Destinations.Profile)}) {
                     Icon(
                         imageVector = Icons.Default.KeyboardArrowRight,
                         contentDescription = "Profile"
