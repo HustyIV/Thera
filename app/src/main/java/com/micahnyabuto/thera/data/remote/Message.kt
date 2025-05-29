@@ -7,4 +7,3 @@ data class ChatRequest(
 data class ChatResponse(
     val reply: String
 )
-

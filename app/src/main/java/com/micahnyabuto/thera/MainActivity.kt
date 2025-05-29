@@ -44,7 +44,9 @@ import com.micahnyabuto.thera.ui.navigation.Destinations
 import com.micahnyabuto.thera.ui.screens.chat.ChatScreen
 import com.micahnyabuto.thera.ui.screens.settings.SettingsViewModel
 import com.micahnyabuto.thera.ui.theme.TheraTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
