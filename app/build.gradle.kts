@@ -2,7 +2,10 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    //Serialization
+    id("com.google.devtools.ksp" )
+    id("com.google.dagger.hilt.android")
+
+            //Serialization
     id("org.jetbrains.kotlin.plugin.serialization") version "2.1.20"
 
 }
@@ -78,6 +81,24 @@ dependencies {
 
     //Datastore
     implementation ("androidx.datastore:datastore-preferences:1.1.6")
+
+    //Retrofit
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
+
+    implementation ("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.11.0")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
+
+    // JSON serialization library, works with the Kotlin serialization plugin
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
+
+
+    //Hilt
+    ksp(libs.hilt.compiler)
+    ksp(libs.androidx.hilt.compiler.v100)
+    implementation(libs.hilt.android.v248)
+    implementation(libs.androidx.hilt.navigation.compose.v110alpha01)
+
 
 
 
