@@ -46,6 +46,7 @@ import com.micahnyabuto.thera.ui.screens.settings.SettingsViewModel
 import com.micahnyabuto.thera.ui.theme.TheraTheme
 import dagger.hilt.android.AndroidEntryPoint
 
+
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,7 +57,6 @@ class MainActivity : ComponentActivity() {
             val isDarkMode by viewModel.isDarkMode.collectAsState()
             TheraTheme (
                 darkTheme =isDarkMode
-
             ){
                 val navController =rememberNavController()
                 val navBackStackEntry by navController.currentBackStackEntryAsState()
@@ -66,7 +66,6 @@ class MainActivity : ComponentActivity() {
                 val showBottomNavigation = currentRoute !in listOf(
                     Destinations.Splash::class.qualifiedName,
                     Destinations.Chat::class.qualifiedName
-
                     )
                 Scaffold (
                     modifier = Modifier.fillMaxSize(),
