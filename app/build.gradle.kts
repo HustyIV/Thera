@@ -4,8 +4,6 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     id("com.google.devtools.ksp" )
     id("com.google.dagger.hilt.android")
-
-            //Serialization
     id("org.jetbrains.kotlin.plugin.serialization") version "2.1.20"
 
 }
